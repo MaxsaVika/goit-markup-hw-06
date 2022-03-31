@@ -604,7 +604,6 @@ img {
   }
 
 .sign-up-icon{
-  display: inline-flex;
    margin-left: 10px;
 }
 
@@ -781,9 +780,14 @@ img {
   cursor: pointer;
 }
 
-.close-icon:hover{
-  fill: var(--accent-color);
+.close-icon{
   transition: fill 250ms var(--timing-function);
+}
+
+.close-btn:hover .close-icon,
+.close-btn:focus .close-icon{
+  fill: var(--accent-color);
+  /* transition: fill 250ms var(--timing-function); */
 }
 
 .modal-title{
@@ -833,7 +837,7 @@ img {
     
   transform: translateY(-50%);
   fill: var(--title-text-color);
-  transition: fill 250ms var(--timing-function)
+  transition: fill 250ms var(--timing-function);
 }
 
 textarea.form-input{
@@ -877,6 +881,8 @@ textarea:focus{
 
   border: 2px solid var(--title-text-color);
   border-radius: 2px;
+
+  transition: border-color 250ms var(--timing-function);
 }
 
 .checkbox:checked + .checkbox-icon{
@@ -884,6 +890,11 @@ textarea:focus{
   background-image: url('../img/icon-check.svg');
   background-size: contain;
   background-origin: border-box;
+  border-color: var(--accent-color);
+}
+
+.checkbox:focus + .checkbox-icon {
+  /* background-color: var(--accent-color); */
   border-color: var(--accent-color);
 }
 
